@@ -1,0 +1,146 @@
+/* Wbsite Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Resets */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Veriabels */
+
+:root{
+    --font-reguler:400;
+    --font-medium:500;
+    --font-bold:700;
+    --primery-color:#333333;
+    --scendtry-color:#f50E82;
+}
+
+/* Body bacic setep */
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: var(--primery-color);
+  /* overflow-: hidden; */
+    line-height: 32px;
+}
+/* Global class */
+.container{
+    max-width: 1266px;
+    margin: 200px auto;
+}
+.cta-btn{
+    margin-top: 22px;
+    font-size: 16px;
+    font-weight: var(--font-medium);
+    display: inline-block;
+    padding: 6px 17px ;
+    border: 1px solid var(--primery-color);
+    color: var(--primery-color);
+    text-decoration: none;
+    transition: border-color, color ease 0.3s ;
+    position: relative;
+    z-index: 1;
+  
+}
+.cta-btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--primery-color);
+    transition: width  ease 0.9s;
+    z-index: -1;
+}
+
+.cta-btn::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background-color:var(--primery-color);
+    transition: width  ease 0.9s;
+    z-index: -1;
+}
+
+
+
+.cta-btn:hover::before,
+.cta-btn:hover::after{
+    width: 100%;
+}
+.cta-btn:hover{
+    color: white;
+}
+/* Card Css */
+.cards{
+    display: flex;
+    gap: 55px;
+}
+.card{
+    flex: 1;
+}
+.card .face{
+    height: 260px;
+    box-shadow: 0 13px 50px;
+  
+   
+}
+.card .face.face1{
+    background-color: var(--primery-color);
+    transform: translateY(130px);
+    position: relative;
+    z-index: 1;
+    transition: transform ease 1s;
+    
+}
+.card .face.face1 .contaent{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+
+.card .face.face1 .contaent *{
+    color: white;
+    fill: white;
+    opacity: 0.4;
+}
+
+
+.card .face.face1 .contaent .card-titel{
+    margin-top: 18px;
+    font-size: 32px;
+}
+
+.card .face.face2{
+    background-color: white;
+    padding: 45px 62px 45px 45px;
+    transform: translateY(-130px);
+    transition: transform ease 0.5s;
+  
+}
+.card:hover .face.face1 .contaent *{
+    opacity: 1;
+}
+
+
+.card:hover .face{
+    transform: translateY(0);
+}
+
+
+.card:hover .face.face1{
+    background-color: var(--scendtry-color);
+}
